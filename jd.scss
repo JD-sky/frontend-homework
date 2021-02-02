@@ -1,0 +1,98 @@
+   * {
+        margin: 0;
+        padding: 0;
+    }
+    @mixin flex-column {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    @mixin nav-item {
+        height: 60px;
+        background: cyan;
+        margin: 20px 20px 0 20px;
+    }
+    @mixin content-item {
+        flex: 1;
+        background: darkgrey;
+        margin: 20px;
+    }
+    .all-parent {
+        width: 100vw;
+        height: 100vh;
+        @include flex-column();
+        overflow: hidden;
+    }
+
+    .header {
+        height: 70px;
+        background: red;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-content {
+        flex: 1;
+        background: green;
+        display: flex;
+    }
+
+    .nav {
+        width: 100px;
+        background: pink;
+        @include flex-column();
+    }
+
+    .content {
+        flex: 1;
+        background: darkorange;
+        @include flex-column();
+    }
+
+    .header-icon {
+        width: 30px;
+        height: 30px;
+        background: blue;
+        margin-left: 10px;
+    }
+
+    .header-title {
+        height: 30px;
+        flex: 1;
+        background: chartreuse;
+    }
+
+    .header-user {
+        width: 50px;
+        height: 30px;
+        background: blueviolet;
+        margin-right: 10px;
+    }
+
+    .nav-system {
+        @include nav-item();
+    }
+
+    .nav-user {
+        @include nav-item();
+    }
+
+    .nav-test {
+        @include nav-item();
+    }
+
+    .nav-exam {
+        @include nav-item();
+    }
+
+    .nav-result {
+        @include nav-item();
+    }
+
+    .content-progress {
+      @include content-item();
+    }
+
+    .content-finish {
+      @include content-item();
+    }
