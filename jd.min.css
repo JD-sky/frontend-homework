@@ -4,29 +4,19 @@
 
 .header { height: 70px; background: red; display: flex; align-items: center; }
 
+.header .icon { width: 30px; height: 30px; background: blue; margin-left: 10px; }
+
+.header .title { height: 30px; flex: 1; background: chartreuse; }
+
+.header .user { width: 50px; height: 30px; background: blueviolet; margin-right: 10px; }
+
 .nav-content { flex: 1; background: green; display: flex; }
 
-.nav { width: 100px; background: pink; display: flex; flex-flow: column nowrap; }
+.nav-content .nav { width: 100px; background: pink; display: flex; flex-flow: column nowrap; }
 
-.content { flex: 1; background: darkorange; display: flex; flex-flow: column nowrap; }
+.nav-content .nav .system, .nav-content .nav .user, .nav-content .nav .test, .nav-content .nav .exam, .nav-content .nav .result { height: 60px; background: cyan; margin: 20px 20px 0 20px; }
 
-.header-icon { width: 30px; height: 30px; background: blue; margin-left: 10px; }
+.nav-content .content { flex: 1; background: darkorange; display: flex; flex-flow: column nowrap; }
 
-.header-title { height: 30px; flex: 1; background: chartreuse; }
-
-.header-user { width: 50px; height: 30px; background: blueviolet; margin-right: 10px; }
-
-.nav-system { height: 60px; background: cyan; margin: 20px 20px 0 20px; }
-
-.nav-user { height: 60px; background: cyan; margin: 20px 20px 0 20px; }
-
-.nav-test { height: 60px; background: cyan; margin: 20px 20px 0 20px; }
-
-.nav-exam { height: 60px; background: cyan; margin: 20px 20px 0 20px; }
-
-.nav-result { height: 60px; background: cyan; margin: 20px 20px 0 20px; }
-
-.content-progress { flex: 1; background: darkgrey; margin: 20px; }
-
-.content-finish { flex: 1; background: darkgrey; margin: 20px; }
+.nav-content .content .progress, .nav-content .content .finish { flex: 1; background: darkgrey; margin: 20px; }
 /*# sourceMappingURL=jd.min.css.map */

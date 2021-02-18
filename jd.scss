@@ -1,6 +1,17 @@
+   $num-zero: 0;
+   $num-one: 1;
+   $num-ten: 10;
+   $num-twenty: 20;
+   $num-tirty: 30;
+   $num-sixty: 60;
+   $num-seventy: 70;
+   $num-hundred: 100;
+   $px: $px;
+   $vh: vh;
+   $vw: vw;
    * {
-        margin: 0;
-        padding: 0;
+        margin: $num-zero;
+        padding: $num-zero;
     }
     @mixin flex-column {
         display: flex;
@@ -8,91 +19,64 @@
     }
 
     @mixin nav-item {
-        height: 60px;
+        height: $num-sixty + $px;
         background: cyan;
-        margin: 20px 20px 0 20px;
+        margin: $num-twenty + $px $num-twenty + $px $num-zero $num-twenty + $px;
     }
     @mixin content-item {
-        flex: 1;
+        flex: $num-one;
         background: darkgrey;
-        margin: 20px;
+        margin: $num-twenty + $px;
     }
     .all-parent {
-        width: 100vw;
-        height: 100vh;
+        width: $num-hundred + $vw;
+        height: $num-hundred + $vh;
         @include flex-column();
         overflow: hidden;
     }
 
     .header {
-        height: 70px;
+        height: $num-seventy + $px;
         background: red;
         display: flex;
         align-items: center;
+        .icon {
+            width: $num-tirty + $px;
+            height: $num-tirty + $px;
+            background: blue;
+            margin-left: $num-ten + $px; 
+        };
+        .title {
+            height: $num-tirty + $px;
+            flex: $num-one;
+            background: chartreuse;
+        }
+        .user {
+            width: 50$px;
+            height: $num-tirty + $px;
+            background: blueviolet;
+            margin-right: $num-ten + $px;
+        }
     }
 
     .nav-content {
-        flex: 1;
+        flex: $num-one;
         background: green;
         display: flex;
-    }
-
-    .nav {
-        width: 100px;
-        background: pink;
-        @include flex-column();
-    }
-
-    .content {
-        flex: 1;
-        background: darkorange;
-        @include flex-column();
-    }
-
-    .header-icon {
-        width: 30px;
-        height: 30px;
-        background: blue;
-        margin-left: 10px;
-    }
-
-    .header-title {
-        height: 30px;
-        flex: 1;
-        background: chartreuse;
-    }
-
-    .header-user {
-        width: 50px;
-        height: 30px;
-        background: blueviolet;
-        margin-right: 10px;
-    }
-
-    .nav-system {
-        @include nav-item();
-    }
-
-    .nav-user {
-        @include nav-item();
-    }
-
-    .nav-test {
-        @include nav-item();
-    }
-
-    .nav-exam {
-        @include nav-item();
-    }
-
-    .nav-result {
-        @include nav-item();
-    }
-
-    .content-progress {
-      @include content-item();
-    }
-
-    .content-finish {
-      @include content-item();
+        .nav {
+            width: $num-hundred + $px;
+            background: pink;
+            @include flex-column();
+            .system, .user, .test, .exam, .result{
+                @include nav-item();
+            }
+        };
+        .content {
+            flex: $num-one;
+            background: darkorange;
+            @include flex-column();
+           .progress, .finish{
+                @include content-item();  
+           } 
+        }
     }
